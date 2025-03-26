@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal link page">
+    <title>LinkCascade</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts for Poppins and Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Preload important assets for better performance -->
+    <link rel="preload" href="assets/images/profile.jpg" as="image">
+    <!-- Favicon Links -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="assets/favicon_io/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon_io/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon_io/android-chrome-512x512.png">
+    <link rel="manifest" href="assets/favicon_io/site.webmanifest">
+    <!-- Additional meta tags for better favicon support -->
+    <meta name="msapplication-TileImage" content="assets/favicon_io/android-chrome-192x192.png">
+    <meta name="theme-color" content="#1a1a1a">
+</head>
+<body>
+    <!-- Header Bar with Credit -->
+    <div class="header-bar">
+        <div class="credit">Designed & Developed with ❤️ by Nilay Naha</div>
+    </div>
+    <div class="container">
+        <!-- Profile Section -->
+        <div class="profile">
+            <img src="assets/images/profile.jpg" alt="Profile Picture" class="profile-img fade-in">
+            <h1 class="fade-in">Nilay Naha</h1>
+            <p class="bio fade-in">Innovate. Code. Repeat.</p>
+        </div>
+
+        <!-- Links Section -->
+        <div class="links fade-in" id="links-container"></div>
+
+        <!-- Social Media Section -->
+        <div class="social fade-in">
+            <a href="#" id="github-link" target="_blank" aria-label="Visit my GitHub profile"><img src="assets/icons/github.svg" alt="GitHub"></a>
+            <a href="#" id="linkedin-link" target="_blank" aria-label="Visit my LinkedIn profile"><img src="assets/icons/linkedin.svg" alt="Linkedin"></a>
+            <a href="#" id="facebook-link" target="_blank" aria-label="Visit my Facebook profile"><img src="assets/icons/facebook.svg" alt="Facebook"></a>
+            <a href="#" id="twitter-link" target="_blank" aria-label="Visit my Twitter profile"><img src="assets/icons/twitter.svg" alt="Twitter"></a>
+            <a href="#" id="instagram-link" target="_blank" aria-label="Visit my Instagram profile"><img src="assets/icons/instagram.svg" alt="Instagram"></a>
+        </div>
+
+        <!-- Footer Section -->
+        <footer class="footer fade-in">
+            <p>@ 2025 All Rights Reserved LinkCascade</p>
+        </footer>
+
+        <!-- Dark Mode Toggle -->
+        <button class="dark-mode-toggle fade-in" aria-label="Toggle dark mode" tabindex="0">
+            <span class="sun">☀️</span>
+            <span class="moon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </span>
+        </button>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
