@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Personal link page">
     <title>LinkCascade</title>
+    
     <link rel="stylesheet" href="css/style.css">
+    
     <!-- Google Fonts for Poppins and Montserrat -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <!-- Preload important assets for better performance -->
@@ -35,21 +37,28 @@
             <p class="bio fade-in">Innovate. Code. Repeat.</p>
         </div>
 
-        <!-- Links Section -->
+        <!-- Links Section (Dynamically populated by script.js) -->
         <div class="links fade-in" id="links-container"></div>
 
         <!-- Social Media Section -->
         <div class="social fade-in">
-            <a href="#" id="github-link" target="_blank" aria-label="Visit my GitHub profile"><img src="assets/icons/github.svg" alt="GitHub"></a>
-            <a href="#" id="linkedin-link" target="_blank" aria-label="Visit my LinkedIn profile"><img src="assets/icons/linkedin.svg" alt="Linkedin"></a>
-            <a href="#" id="facebook-link" target="_blank" aria-label="Visit my Facebook profile"><img src="assets/icons/facebook.svg" alt="Facebook"></a>
-            <a href="#" id="twitter-link" target="_blank" aria-label="Visit my Twitter profile"><img src="assets/icons/twitter.svg" alt="Twitter"></a>
-            <a href="#" id="instagram-link" target="_blank" aria-label="Visit my Instagram profile"><img src="assets/icons/instagram.svg" alt="Instagram"></a>
+            <a href="#" id="github-link" target="_blank" rel="noopener noreferrer" aria-label="Visit my GitHub profile"><img src="assets/icons/github.svg" alt="GitHub"></a>
+            <a href="#" id="linkedin-link" target="_blank" rel="noopener noreferrer" aria-label="Visit my LinkedIn profile"><img src="assets/icons/linkedin.svg" alt="Linkedin"></a>
+            <a href="#" id="facebook-link" target="_blank" rel="noopener noreferrer" aria-label="Visit my Facebook profile"><img src="assets/icons/facebook.svg" alt="Facebook"></a>
+            <a href="#" id="twitter-link" target="_blank" rel="noopener noreferrer" aria-label="Visit my Twitter profile"><img src="assets/icons/twitter.svg" alt="Twitter"></a>
+            <a href="#" id="instagram-link" target="_blank" rel="noopener noreferrer" aria-label="Visit my Instagram profile"><img src="assets/icons/instagram.svg" alt="Instagram"></a>
         </div>
 
         <!-- Footer Section -->
         <footer class="footer fade-in">
-            <p>@ 2025 All Rights Reserved LinkCascade</p>
+            <!-- START: Visitor Counter Display -->
+            <div class="visitor-stats">
+                <span><span class="live-dot"></span><span id="concurrent-users">1</span> Online</span>
+                <span class="divider">|</span>
+                <span><span id="total-visits">--</span> Total Visits</span>
+            </div>
+            <!-- END: Visitor Counter Display -->
+            <p>© 2025 All Rights Reserved LinkCascade</p>
         </footer>
 
         <!-- Dark Mode Toggle -->
@@ -63,5 +72,11 @@
 
     <script src="js/config.js"></script>
     <script src="js/script.js"></script>
+
+    <!-- START: Counter.dev script -->
+    <!-- This script will automatically count total and concurrent users -->
+    <!-- Replace 'your-website-url' with your actual domain or a unique name like 'nilay-naha-linkcascade' -->
+    <script src="https://cdn.counter.dev/script.js" data-id="nilay-naha-linkcascade" data-utcoffset="-5"></script>
+    <!-- END: Counter.dev script -->
 </body>
 </html>
