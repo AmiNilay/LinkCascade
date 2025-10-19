@@ -445,6 +445,132 @@ body.dark .visitor-stats {
     transform: translateY(-5px);
 }
 
+.link-btn[data-type="portfolio v1"] { 
+    border-color: #00d4ff;
+    color: #00d4ff;
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2),
+                inset 0 0 20px rgba(0, 212, 255, 0.05);
+}
+.link-btn[data-type="portfolio v1"]:hover {
+    background: rgba(0, 212, 255, 0.1);
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.5),
+                0 10px 40px rgba(0, 212, 255, 0.3),
+                inset 0 0 30px rgba(0, 212, 255, 0.1);
+    transform: translateY(-5px);
+}
+
+.link-btn[data-type="pypass manager"] { 
+    border-color: #ffd700;
+    color: #ffd700;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2),
+                inset 0 0 20px rgba(255, 215, 0, 0.05);
+}
+.link-btn[data-type="pypass manager"]:hover {
+    background: rgba(255, 215, 0, 0.1);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.5),
+                0 10px 40px rgba(255, 215, 0, 0.3),
+                inset 0 0 30px rgba(255, 215, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.link-btn[data-type="weathervista"] { 
+    border-color: #00bfff;
+    color: #00bfff;
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.2),
+                inset 0 0 20px rgba(0, 191, 255, 0.05);
+}
+.link-btn[data-type="weathervista"]:hover {
+    background: rgba(0, 191, 255, 0.1);
+    box-shadow: 0 0 30px rgba(0, 191, 255, 0.5),
+                0 10px 40px rgba(0, 191, 255, 0.3),
+                inset 0 0 30px rgba(0, 191, 255, 0.1);
+    transform: translateY(-5px);
+}
+
+.link-btn[data-type="ultimate calculator hub"] { 
+    border-color: #ff1493;
+    color: #ff1493;
+    box-shadow: 0 0 20px rgba(255, 20, 147, 0.2),
+                inset 0 0 20px rgba(255, 20, 147, 0.05);
+}
+.link-btn[data-type="ultimate calculator hub"]:hover {
+    background: rgba(255, 20, 147, 0.1);
+    box-shadow: 0 0 30px rgba(255, 20, 147, 0.5),
+                0 10px 40px rgba(255, 20, 147, 0.3),
+                inset 0 0 30px rgba(255, 20, 147, 0.1);
+    transform: translateY(-5px);
+}
+
+.link-btn[data-type="calculatorpro"] { 
+    border-color: #7b68ee;
+    color: #7b68ee;
+    box-shadow: 0 0 20px rgba(123, 104, 238, 0.2),
+                inset 0 0 20px rgba(123, 104, 238, 0.05);
+}
+.link-btn[data-type="calculatorpro"]:hover {
+    background: rgba(123, 104, 238, 0.1);
+    box-shadow: 0 0 30px rgba(123, 104, 238, 0.5),
+                0 10px 40px rgba(123, 104, 238, 0.3),
+                inset 0 0 30px rgba(123, 104, 238, 0.1);
+    transform: translateY(-5px);
+}
+
+.link-btn[data-type="internet speed meter"] { 
+    border-color: #00fa9a;
+    color: #00fa9a;
+    box-shadow: 0 0 20px rgba(0, 250, 154, 0.2),
+                inset 0 0 20px rgba(0, 250, 154, 0.05);
+}
+.link-btn[data-type="internet speed meter"]:hover {
+    background: rgba(0, 250, 154, 0.1);
+    box-shadow: 0 0 30px rgba(0, 250, 154, 0.5),
+                0 10px 40px rgba(0, 250, 154, 0.3),
+                inset 0 0 30px rgba(0, 250, 154, 0.1);
+    transform: translateY(-5px);
+}
+
+.link-btn[data-type="personal blog"] { 
+    border-color: #ff8c00;
+    color: #ff8c00;
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.2),
+                inset 0 0 20px rgba(255, 140, 0, 0.05);
+}
+.link-btn[data-type="personal blog"]:hover {
+    background: rgba(255, 140, 0, 0.1);
+    box-shadow: 0 0 30px rgba(255, 140, 0, 0.5),
+                0 10px 40px rgba(255, 140, 0, 0.3),
+                inset 0 0 30px rgba(255, 140, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+.link-btn[data-type="qr code generator"] { 
+    border-color: #9370db;
+    color: #9370db;
+    box-shadow: 0 0 20px rgba(147, 112, 219, 0.2),
+                inset 0 0 20px rgba(147, 112, 219, 0.05);
+}
+.link-btn[data-type="qr code generator"]:hover {
+    background: rgba(147, 112, 219, 0.1);
+    box-shadow: 0 0 30px rgba(147, 112, 219, 0.5),
+                0 10px 40px rgba(147, 112, 219, 0.3),
+                inset 0 0 30px rgba(147, 112, 219, 0.1);
+    transform: translateY(-5px);
+}
+
+.link-btn[data-type="library management system"] { 
+    border-color: #32cd32;
+    color: #32cd32;
+    box-shadow: 0 0 20px rgba(50, 205, 50, 0.2),
+                inset 0 0 20px rgba(50, 205, 50, 0.05);
+}
+.link-btn[data-type="library management system"]:hover {
+    background: rgba(50, 205, 50, 0.1);
+    box-shadow: 0 0 30px rgba(50, 205, 50, 0.5),
+                0 10px 40px rgba(50, 205, 50, 0.3),
+                inset 0 0 30px rgba(50, 205, 50, 0.1);
+    transform: translateY(-5px);
+}
+
 .link-btn[data-type="tic-tac-toe with ai opponent"] { 
     border-color: #8a2be2;
     color: #8a2be2;
@@ -479,6 +605,13 @@ body.dark .visitor-stats {
     box-shadow: 0 0 20px rgba(255, 0, 255, 0.2),
                 inset 0 0 20px rgba(255, 0, 255, 0.05);
 }
+.link-btn[data-type="personal link page (linkcascade)"]:hover {
+    background: rgba(255, 0, 255, 0.1);
+    box-shadow: 0 0 30px rgba(255, 0, 255, 0.5),
+                0 10px 40px rgba(255, 0, 255, 0.3),
+                inset 0 0 30px rgba(255, 0, 255, 0.1);
+    transform: translateY(-5px);
+}
 
 .link-btn[data-type="copy email address"] { 
     border-color: #ff6b6b;
@@ -491,20 +624,6 @@ body.dark .visitor-stats {
     box-shadow: 0 0 30px rgba(255, 107, 107, 0.5),
                 0 10px 40px rgba(255, 107, 107, 0.3),
                 inset 0 0 30px rgba(255, 107, 107, 0.1);
-    transform: translateY(-5px);
-}
-
-.link-btn[data-type="pypass manager"] { 
-    border-color: #ffd700;
-    color: #ffd700;
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2),
-                inset 0 0 20px rgba(255, 215, 0, 0.05);
-}
-.link-btn[data-type="pypass manager"]:hover {
-    background: rgba(255, 215, 0, 0.1);
-    box-shadow: 0 0 30px rgba(255, 215, 0, 0.5),
-                0 10px 40px rgba(255, 215, 0, 0.3),
-                inset 0 0 30px rgba(255, 215, 0, 0.1);
     transform: translateY(-5px);
 }
 
@@ -738,6 +857,11 @@ h1.fade-in { animation-delay: 0.4s; }
 .social.fade-in { animation-delay: 1.1s; }
 .footer.fade-in { animation-delay: 1.3s; }
 .dark-mode-toggle.fade-in { animation-delay: 1.5s; }
+
+@keyframes blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+}
 
 /* Responsive Design */
 @media (max-width: 480px) {
