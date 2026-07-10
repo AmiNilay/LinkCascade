@@ -29,11 +29,25 @@
             </div>
             <h1 class="skeleton-text">Nilay Naha</h1>
             <p class="bio skeleton-text">Innovate. Code. Repeat.</p>
-            
-            <!-- DEDICATED RESUME BUTTON -->
-            <a href="assets/Nilay_Naha_Resume.pdf" download="Nilay_Naha_Resume" class="resume-btn skeleton-text">
-                <span class="material-symbols-outlined">description</span> Download Resume
-            </a>
+
+            <!-- Open to Work Badge -->
+            <div class="otw-badge skeleton-text">
+                <span class="otw-dot"></span>
+                Open to Work
+            </div>
+
+            <!-- Action Buttons Row -->
+            <div class="action-btns skeleton-text">
+                <a href="assets/Nilay_Naha_Resume.pdf" download="Nilay_Naha_Resume" class="resume-btn">
+                    <span class="material-symbols-outlined">description</span> Resume
+                </a>
+                <a href="#" class="resume-btn portfolio-btn" id="portfolio-header-btn" target="_blank" rel="noopener noreferrer">
+                    <span class="material-symbols-outlined">work</span> Portfolio
+                </a>
+                <button class="resume-btn qr-btn" id="qr-share-btn" aria-label="Share via QR">
+                    <span class="material-symbols-outlined">qr_code</span>
+                </button>
+            </div>
         </header>
 
         <!-- Mini Telemetry Dashboard -->
@@ -111,9 +125,29 @@
                 <button id="send-chat" class="material-symbols-outlined">send</button>
             </div>
         </div>
+
+        <!-- QR Code Modal -->
+        <div class="qr-modal-overlay" id="qr-modal-overlay">
+            <div class="qr-modal">
+                <div class="qr-modal-header">
+                    <span>Share My Page</span>
+                    <button id="close-qr-modal" class="material-symbols-outlined">close</button>
+                </div>
+                <div class="qr-modal-body">
+                    <div id="qr-code-display"></div>
+                    <p class="qr-url-text">aminilay.github.io/LinkCascade</p>
+                    <button class="copy-qr-url-btn" id="copy-url-btn">
+                        <span class="material-symbols-outlined">content_copy</span>
+                        Copy Link
+                    </button>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <script src="js/config.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <script src="js/script.js"></script>
     <script src="js/robot.js"></script>
     <script src="https://cdn.counter.dev/script.js" data-id="nilay-naha-linkcascade" data-utcoffset="-5"></script>

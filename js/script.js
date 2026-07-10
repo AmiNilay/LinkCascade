@@ -15,11 +15,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ---------------------------------------------------------
-    // 1. LINK RENDERING & EVENT LISTENERS
+    // 1. LINK RENDERING (CATEGORY-WISE) & EVENT LISTENERS
     // ---------------------------------------------------------
     const linksContainer = document.getElementById('links-container');
-    
-    config.links.forEach((link) => {
+
+    const categoryOrder = [
+        "AI & Machine Learning",
+        "Security & Network Tools",
+        "Web Applications",
+        "Utility Tools"
+    ];
+
+    const createLinkElement = (link) => {
         const a = document.createElement('a');
         a.href = link.url;
         a.className = 'link-btn skeleton-text loading';
@@ -27,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let microIcon = 'chevron_right';
         const lowerText = link.text.toLowerCase();
-        
+
         if (lowerText.includes('portfolio')) microIcon = 'terminal';
         else if (lowerText.includes('manager') || lowerText.includes('pypass')) microIcon = 'key';
         else if (lowerText.includes('weather')) microIcon = 'cloud';
@@ -38,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         else if (lowerText.includes('flashdl')) microIcon = 'download';
 
         a.innerHTML = `
-            ${link.icon} 
+            ${link.icon}
             <span class="link-text">${link.text}</span>
             <span class="micro-interaction material-symbols-outlined">${microIcon}</span>
         `;
@@ -62,8 +69,39 @@ document.addEventListener('DOMContentLoaded', () => {
             a.classList.add('disabled');
             a.removeAttribute('href');
         }
-        if (linksContainer) linksContainer.appendChild(a);
-    });
+
+        return a;
+    };
+
+    if (linksContainer) {
+        categoryOrder.forEach(category => {
+            const categoryLinks = config.links.filter(l => l.category === category);
+            if (categoryLinks.length === 0) return;
+
+            const heading = document.createElement('h2');
+            heading.className = 'category-title skeleton-text loading';
+            heading.textContent = category;
+            linksContainer.appendChild(heading);
+
+            const group = document.createElement('div');
+            group.className = 'category-group';
+
+            categoryLinks.forEach(link => {
+                group.appendChild(createLinkElement(link));
+            });
+
+            linksContainer.appendChild(group);
+        });
+
+        // Render any uncategorized links at the end
+        const uncategorized = config.links.filter(l => !categoryOrder.includes(l.category));
+        if (uncategorized.length > 0) {
+            const group = document.createElement('div');
+            group.className = 'category-group';
+            uncategorized.forEach(link => group.appendChild(createLinkElement(link)));
+            linksContainer.appendChild(group);
+        }
+    }
 
     Object.keys(config.social).forEach(key => {
         const socialLink = document.getElementById(`${key}-link`);
@@ -74,7 +112,77 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ---------------------------------------------------------
-    // 2. RADAR CHART (THEME AWARE)
+    // 2. PORTFOLIO BUTTON IN HEADER
+    // ---------------------------------------------------------
+    const portfolioHeaderBtn = document.getElementById('portfolio-header-btn');
+    if (portfolioHeaderBtn) {
+        portfolioHeaderBtn.href = 'https://nilay-naha-portfolio.vercel.app/';
+    }
+
+    // ---------------------------------------------------------
+    // 3. QR CODE MODAL
+    // ---------------------------------------------------------
+    const qrShareBtn = document.getElementById('qr-share-btn');
+    const qrModalOverlay = document.getElementById('qr-modal-overlay');
+    const closeQrModal = document.getElementById('close-qr-modal');
+    const copyUrlBtn = document.getElementById('copy-url-btn');
+    const qrDisplay = document.getElementById('qr-code-display');
+    let qrGenerated = false;
+
+    const pageUrl = 'https://aminilay.github.io/LinkCascade/';
+
+    if (qrShareBtn) {
+        qrShareBtn.addEventListener('click', () => {
+            qrModalOverlay.classList.add('active');
+            if (!qrGenerated) {
+                new QRCode(qrDisplay, {
+                    text: pageUrl,
+                    width: 200,
+                    height: 200,
+                    colorDark: document.body.classList.contains('dark')
+                        ? '#ffffff'
+                        : '#000000',
+                    colorLight: document.body.classList.contains('dark')
+                        ? '#000000'
+                        : '#ffffff',
+                    correctLevel: QRCode.CorrectLevel.H
+                });
+                qrGenerated = true;
+            }
+        });
+    }
+
+    if (closeQrModal) {
+        closeQrModal.addEventListener('click', () => {
+            qrModalOverlay.classList.remove('active');
+        });
+    }
+
+    qrModalOverlay?.addEventListener('click', (e) => {
+        if (e.target === qrModalOverlay) {
+            qrModalOverlay.classList.remove('active');
+        }
+    });
+
+    if (copyUrlBtn) {
+        copyUrlBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(pageUrl).then(() => {
+                copyUrlBtn.innerHTML = `
+                    <span class="material-symbols-outlined">check</span>
+                    Copied!
+                `;
+                setTimeout(() => {
+                    copyUrlBtn.innerHTML = `
+                        <span class="material-symbols-outlined">content_copy</span>
+                        Copy Link
+                    `;
+                }, 2000);
+            });
+        });
+    }
+
+    // ---------------------------------------------------------
+    // 4. RADAR CHART (THEME AWARE)
     // ---------------------------------------------------------
     let skillsChart;
     const body = document.body;
@@ -88,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const ctx = document.getElementById('skills-radar');
         if (!ctx) return;
         if (skillsChart) skillsChart.destroy();
-        
+
         skillsChart = new Chart(ctx, {
             type: 'radar',
             data: {
@@ -131,7 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ---------------------------------------------------------
-    // 3. SKELETON LOADING & DASHBOARD
+    // 5. SKELETON LOADING & DASHBOARD
     // ---------------------------------------------------------
     const skeletons = document.querySelectorAll('.skeleton-text, .skeleton');
     skeletons.forEach(el => el.classList.add('loading'));
@@ -154,7 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ---------------------------------------------------------
-    // 4. PARTICLE NETWORK BACKGROUND
+    // 6. PARTICLE NETWORK BACKGROUND
     // ---------------------------------------------------------
     const canvas = document.getElementById('particle-canvas');
     if (canvas) {
@@ -172,7 +280,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 this.size = Math.random() * 2 + 1;
             }
             update() {
-                this.x += this.vx; this.y += this.vy;
+                this.x += this.vx;
+                this.y += this.vy;
                 if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
                 if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
             }
@@ -189,9 +298,9 @@ document.addEventListener('DOMContentLoaded', () => {
         function animateParticles() {
             ctxCanvas.clearRect(0, 0, canvas.width, canvas.height);
             const isDark = document.body.classList.contains('dark');
-            
+
             particles.forEach(p => { p.update(); p.draw(isDark); });
-            
+
             for (let i = 0; i < particles.length; i++) {
                 for (let j = i; j < particles.length; j++) {
                     const dx = particles[i].x - particles[j].x;
@@ -199,7 +308,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     const dist = Math.sqrt(dx * dx + dy * dy);
                     if (dist < 120) {
                         ctxCanvas.beginPath();
-                        ctxCanvas.strokeStyle = isDark ? `rgba(255,255,255,${0.15 - dist/800})` : `rgba(0,0,0,${0.1 - dist/1200})`;
+                        ctxCanvas.strokeStyle = isDark
+                            ? `rgba(255,255,255,${0.15 - dist / 800})`
+                            : `rgba(0,0,0,${0.1 - dist / 1200})`;
                         ctxCanvas.lineWidth = 1;
                         ctxCanvas.moveTo(particles[i].x, particles[i].y);
                         ctxCanvas.lineTo(particles[j].x, particles[j].y);
@@ -218,7 +329,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ---------------------------------------------------------
-    // 5. HIDDEN DEVELOPER TERMINAL (ALT + T)
+    // 7. HIDDEN DEVELOPER TERMINAL (ALT + T)
     // ---------------------------------------------------------
     const terminal = document.getElementById('terminal-mode');
     const termInput = document.getElementById('terminal-input');
@@ -227,21 +338,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (terminal && termInput) {
         document.addEventListener('keydown', (e) => {
             if (e.altKey && e.key.toLowerCase() === 't') {
-                e.preventDefault(); 
-                
+                e.preventDefault();
                 terminal.classList.toggle('active');
-                
                 if (terminal.classList.contains('active')) {
                     setTimeout(() => {
-                        termInput.value = ''; 
+                        termInput.value = '';
                         termInput.focus();
                     }, 50);
                 }
             }
-            
             if (e.key === 'Escape' && terminal.classList.contains('active')) {
                 terminal.classList.remove('active');
-                document.activeElement.blur(); 
+                document.activeElement.blur();
             }
         });
 
@@ -258,7 +366,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 printToTerminal(`<span class="prompt">admin@nilay:~$</span> ${val}`);
                 termInput.value = '';
 
-                switch(val) {
+                switch (val) {
                     case 'help': printToTerminal('Available commands: about, skills, projects, clear, exit'); break;
                     case 'about': printToTerminal('Nilay Naha - Software Developer specializing in AI/ML & Full-Stack.'); break;
                     case 'skills': printToTerminal('Java, Python, Kotlin, OpenCV, Selenium, Next.js, TensorFlow.'); break;
