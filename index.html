@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal link page">
+    <title>Nilay Naha | LinkCascade</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <link rel="preload" href="assets/images/profile.jpg" as="image">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/x-icon" href="assets/favicon_io/favicon.ico">
+</head>
+<body>
+    <!-- Interactive Particle Background -->
+    <canvas id="particle-canvas"></canvas>
+
+    <div class="container">
+        <!-- Profile -->
+        <header class="profile">
+            <div class="profile-img-wrapper skeleton">
+                <img src="assets/images/profile.jpg" alt="Profile Picture" class="profile-img" onload="this.parentElement.classList.remove('skeleton')">
+            </div>
+            <h1 class="skeleton-text">Nilay Naha</h1>
+            <p class="bio skeleton-text">Innovate. Code. Repeat.</p>
+            
+            <!-- DEDICATED RESUME BUTTON -->
+            <a href="assets/Nilay_Naha_Resume.pdf" download="Nilay_Naha_Resume" class="resume-btn skeleton-text">
+                <span class="material-symbols-outlined">description</span> Download Resume
+            </a>
+        </header>
+
+        <!-- Mini Telemetry Dashboard -->
+        <div class="telemetry-dashboard skeleton-text">
+            <div class="telemetry-item">
+                <span class="material-symbols-outlined icon-small">speed</span>
+                <div class="telemetry-data">
+                    <span class="telemetry-label">Load Time</span>
+                    <span id="load-time">-- ms</span>
+                </div>
+            </div>
+            <div class="telemetry-item">
+                <span class="material-symbols-outlined icon-small">timer</span>
+                <div class="telemetry-data">
+                    <span class="telemetry-label">Session</span>
+                    <span id="session-time">00:00</span>
+                </div>
+            </div>
+            <div class="telemetry-item">
+                <span class="live-dot"></span>
+                <div class="telemetry-data">
+                    <span class="telemetry-label">Online</span>
+                    <span id="concurrent-users">1</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Links Container -->
+        <nav class="links" id="links-container"></nav>
+
+        <!-- Social Media -->
+        <div class="social skeleton-text">
+            <a href="#" id="github-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><img src="assets/icons/github.svg" alt="GitHub"></a>
+            <a href="#" id="linkedin-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="assets/icons/linkedin.svg" alt="Linkedin"></a>
+            <a href="#" id="facebook-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><img src="assets/icons/facebook.svg" alt="Facebook"></a>
+            <a href="#" id="twitter-link" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><img src="assets/icons/twitter.svg" alt="Twitter"></a>
+            <a href="#" id="instagram-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="assets/icons/instagram.svg" alt="Instagram"></a>
+        </div>
+
+        <!-- Tech Stack Marquee -->
+        <div class="marquee-container skeleton-text">
+            <div class="marquee-content">
+                <span>Java</span> • <span>Python</span> • <span>Kotlin</span> • <span>OpenCV</span> • <span>Selenium</span> • <span>Machine Learning</span> • <span>Artificial Intelligence</span> • 
+                <span>Java</span> • <span>Python</span> • <span>Kotlin</span> • <span>OpenCV</span> • <span>Selenium</span> • <span>Machine Learning</span> • <span>Artificial Intelligence</span>
+            </div>
+        </div>
+
+        <footer class="footer skeleton-text">
+            <p class="credit">Designed & Developed by Nilay Naha</p>
+            <p>© 2026 All Rights Reserved LinkCascade</p>
+        </footer>
+
+        <!-- Floating Action Buttons -->
+        <div class="fab-container">
+            <button class="chat-toggle" id="chat-toggle-btn" aria-label="Open AI Chat">
+                <span class="material-symbols-outlined">smart_toy</span>
+            </button>
+            <button class="dark-mode-toggle" aria-label="Toggle dark mode">
+                <span class="material-symbols-outlined sun">light_mode</span>
+                <span class="material-symbols-outlined moon">dark_mode</span>
+            </button>
+        </div>
+
+        <!-- AI Chat Widget -->
+        <div class="chat-widget" id="chat-widget">
+            <div class="chat-header">
+                <div><span class="material-symbols-outlined" style="vertical-align: middle; font-size: 18px; margin-right: 6px;">smart_toy</span> Ask about my resume</div>
+                <button id="close-chat" class="material-symbols-outlined">close</button>
+            </div>
+            <div class="chat-body" id="chat-body">
+                <div class="message bot">Hello! I'm an AI assistant trained on Nilay's profile. Ask me about his education, skills, or projects!</div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chat-input-field" placeholder="Type your question..." autocomplete="off">
+                <button id="send-chat" class="material-symbols-outlined">send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/robot.js"></script>
+    <script src="https://cdn.counter.dev/script.js" data-id="nilay-naha-linkcascade" data-utcoffset="-5"></script>
+</body>
+</html>
