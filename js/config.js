@@ -3,12 +3,7 @@ const config = {
         email: "nilay.naha.2022@gmail.com"
     },
     links: [
-        {
-            text: "Security Access Verification Pipeline",
-            url: "https://aminilay.github.io/face-recognition-system-official-website/",
-            category: "AI & Machine Learning",
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V11z"></path><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>`
-        },
+        // ── AI & Machine Learning (Most Serious Work) ──
         {
             text: "DrishtiLens: Neural Assistive Pipeline",
             url: "#",
@@ -16,11 +11,19 @@ const config = {
             icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>`
         },
         {
+            text: "Security Access Verification Pipeline",
+            url: "https://aminilay.github.io/face-recognition-system-official-website/",
+            category: "AI & Machine Learning",
+            icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V11z"></path><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>`
+        },
+        {
             text: "Crop Yield Prediction",
             url: "https://github.com/AmiNilay/Crop-Yield-Prediction-System",
             category: "AI & Machine Learning",
             icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22s5-5 5-14c0-3 3-6 8-6 0 0-3 3-3 8s4 5 10 5c0 8-10 14-20 7Z"></path></svg>`
         },
+
+        // ── Security & Network Tools ──
         {
             text: "PyPass: Secure Hashing & Analytics Architecture",
             url: "https://aminilay.github.io/",
@@ -28,17 +31,19 @@ const config = {
             icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path></svg>`
         },
         {
-            text: "Internet Speed Meter",
-            url: "https://aminilay.github.io/internet-speed-meter/",
-            category: "Security & Network Tools",
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>`
-        },
-        {
             text: "NetPulse v2.0",
             url: "https://aminilay.github.io/netpulse-internet-speed-meter/",
             category: "Security & Network Tools",
             icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>`
         },
+        {
+            text: "Internet Speed Meter",
+            url: "https://aminilay.github.io/internet-speed-meter/",
+            category: "Security & Network Tools",
+            icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>`
+        },
+
+        // ── Web Applications ──
         {
             text: "LinkCascade",
             url: "https://aminilay.github.io/LinkCascade/",
@@ -57,6 +62,8 @@ const config = {
             category: "Web Applications",
             icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>`
         },
+
+        // ── Utility Tools (Collapsed by default) ──
         {
             text: "MAKAUT Grade Calculator Pro",
             url: "https://aminilay.github.io/makaut-grade-calculator-pro",
@@ -70,16 +77,10 @@ const config = {
             icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>`
         },
         {
-            text: "QR Code Generator",
-            url: "https://aminilay.github.io/qr-code-generator/",
+            text: "PyPlay: Multi-threaded Media Processing System",
+            url: "https://aminilay.github.io/PyPlay-Official-Website/",
             category: "Utility Tools",
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>`
-        },
-        {
-            text: "Calculator Pro",
-            url: "https://aminilay.github.io/CalculatorPro/",
-            category: "Utility Tools",
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="16" y1="10" x2="8" y2="10"></line><line x1="16" y1="14" x2="8" y2="14"></line><line x1="16" y1="18" x2="8" y2="18"></line></svg>`
+            icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>`
         },
         {
             text: "QuickType Pro",
@@ -88,10 +89,16 @@ const config = {
             icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect><line x1="6" y1="8" x2="6.01" y2="8"></line><line x1="10" y1="8" x2="10.01" y2="8"></line><line x1="14" y1="8" x2="14.01" y2="8"></line><line x1="18" y1="8" x2="18.01" y2="8"></line><line x1="6" y1="12" x2="6.01" y2="12"></line><line x1="10" y1="12" x2="10.01" y2="12"></line><line x1="14" y1="12" x2="14.01" y2="12"></line><line x1="18" y1="12" x2="18.01" y2="12"></line><line x1="8" y1="16" x2="16" y2="16"></line></svg>`
         },
         {
-            text: "PyPlay: Multi-threaded Media Processing System",
-            url: "https://aminilay.github.io/PyPlay-Official-Website/",
+            text: "Calculator Pro",
+            url: "https://aminilay.github.io/CalculatorPro/",
             category: "Utility Tools",
-            icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>`
+            icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="16" y1="10" x2="8" y2="10"></line><line x1="16" y1="14" x2="8" y2="14"></line><line x1="16" y1="18" x2="8" y2="18"></line></svg>`
+        },
+        {
+            text: "QR Code Generator",
+            url: "https://aminilay.github.io/qr-code-generator/",
+            category: "Utility Tools",
+            icon: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>`
         },
         {
             text: "iZeroPDF",

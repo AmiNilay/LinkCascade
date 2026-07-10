@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ---------------------------------------------------------
-    // 1. LINK RENDERING (CATEGORY-WISE) & EVENT LISTENERS
+    // 1. LINK RENDERING (CATEGORY-WISE, PRIORITY ORDERED)
     // ---------------------------------------------------------
     const linksContainer = document.getElementById('links-container');
 
@@ -83,24 +83,47 @@ document.addEventListener('DOMContentLoaded', () => {
             heading.textContent = category;
             linksContainer.appendChild(heading);
 
-            const group = document.createElement('div');
-            group.className = 'category-group';
+            if (category === "Utility Tools") {
+                // Collapsible "small projects" group to avoid diluting serious work
+                const wrapper = document.createElement('div');
+                wrapper.className = 'utility-collapsible';
 
-            categoryLinks.forEach(link => {
-                group.appendChild(createLinkElement(link));
-            });
+                const hiddenGroup = document.createElement('div');
+                hiddenGroup.className = 'category-group utility-hidden-group';
+                categoryLinks.forEach(link => hiddenGroup.appendChild(createLinkElement(link)));
 
-            linksContainer.appendChild(group);
+                const toggleBtn = document.createElement('button');
+                toggleBtn.className = 'utility-toggle-btn skeleton-text loading';
+                toggleBtn.innerHTML = `
+                    <span class="material-symbols-outlined">expand_more</span>
+                    <span class="toggle-text">+ ${categoryLinks.length} more small projects</span>
+                `;
+
+                toggleBtn.addEventListener('click', () => {
+                    const isOpen = hiddenGroup.classList.contains('open');
+                    if (isOpen) {
+                        hiddenGroup.style.maxHeight = null;
+                        hiddenGroup.classList.remove('open');
+                    } else {
+                        hiddenGroup.classList.add('open');
+                        hiddenGroup.style.maxHeight = hiddenGroup.scrollHeight + 'px';
+                    }
+                    toggleBtn.classList.toggle('active', !isOpen);
+                    toggleBtn.querySelector('.toggle-text').textContent = !isOpen
+                        ? 'Show less'
+                        : `+ ${categoryLinks.length} more small projects`;
+                });
+
+                wrapper.appendChild(toggleBtn);
+                wrapper.appendChild(hiddenGroup);
+                linksContainer.appendChild(wrapper);
+            } else {
+                const group = document.createElement('div');
+                group.className = 'category-group';
+                categoryLinks.forEach(link => group.appendChild(createLinkElement(link)));
+                linksContainer.appendChild(group);
+            }
         });
-
-        // Render any uncategorized links at the end
-        const uncategorized = config.links.filter(l => !categoryOrder.includes(l.category));
-        if (uncategorized.length > 0) {
-            const group = document.createElement('div');
-            group.className = 'category-group';
-            uncategorized.forEach(link => group.appendChild(createLinkElement(link)));
-            linksContainer.appendChild(group);
-        }
     }
 
     Object.keys(config.social).forEach(key => {
@@ -228,9 +251,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateThemeVisuals(isDarkInit);
 
-    const toggleBtn = document.querySelector('.dark-mode-toggle');
-    if (toggleBtn) {
-        toggleBtn.addEventListener('click', () => {
+    const toggleBtn2 = document.querySelector('.dark-mode-toggle');
+    if (toggleBtn2) {
+        toggleBtn2.addEventListener('click', () => {
             body.classList.toggle('dark');
             const isDarkNow = body.classList.contains('dark');
             localStorage.setItem('darkMode', isDarkNow);
@@ -239,27 +262,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ---------------------------------------------------------
-    // 5. SKELETON LOADING & DASHBOARD
+    // 5. SKELETON LOADING
     // ---------------------------------------------------------
     const skeletons = document.querySelectorAll('.skeleton-text, .skeleton');
     skeletons.forEach(el => el.classList.add('loading'));
     setTimeout(() => skeletons.forEach(el => el.classList.remove('loading', 'skeleton')), 800);
-
-    window.addEventListener('load', () => {
-        const loadTimeElement = document.getElementById('load-time');
-        if (loadTimeElement) loadTimeElement.innerText = `${Math.round(performance.now())} ms`;
-    });
-
-    let seconds = 0;
-    const sessionElement = document.getElementById('session-time');
-    if (sessionElement) {
-        setInterval(() => {
-            seconds++;
-            const m = Math.floor(seconds / 60).toString().padStart(2, '0');
-            const s = (seconds % 60).toString().padStart(2, '0');
-            sessionElement.innerText = `${m}:${s}`;
-        }, 1000);
-    }
 
     // ---------------------------------------------------------
     // 6. PARTICLE NETWORK BACKGROUND
@@ -370,7 +377,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     case 'help': printToTerminal('Available commands: about, skills, projects, clear, exit'); break;
                     case 'about': printToTerminal('Nilay Naha - Software Developer specializing in AI/ML & Full-Stack.'); break;
                     case 'skills': printToTerminal('Java, Python, Kotlin, OpenCV, Selenium, Next.js, TensorFlow.'); break;
-                    case 'projects': printToTerminal('NetPulse v2.0, Face Recognition System, FlashDL, DrishtiLens.'); break;
+                    case 'projects': printToTerminal('DrishtiLens, Face Recognition System, NetPulse v2.0, FlashDL.'); break;
                     case 'clear': termOutput.innerHTML = '<div>Type \'help\' to see a list of available commands.</div>'; break;
                     case 'exit': terminal.classList.remove('active'); break;
                     case '': break;
