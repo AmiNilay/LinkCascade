@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ---------------------------------------------------------
-    // 1. LINK RENDERING (CATEGORY-WISE, PRIORITY ORDERED)
+    // 1. LINK RENDERING (CATEGORY-WISE, FEATURED & BADGES)
     // ---------------------------------------------------------
     const linksContainer = document.getElementById('links-container');
 
@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const a = document.createElement('a');
         a.href = link.url;
         a.className = 'link-btn skeleton-text loading';
+        if (link.featured) a.classList.add('featured-link');
         a.setAttribute('data-type', link.text.toLowerCase());
 
         let microIcon = 'chevron_right';
@@ -44,9 +45,19 @@ document.addEventListener('DOMContentLoaded', () => {
         else if (lowerText.includes('crop') || lowerText.includes('drishtilens')) microIcon = 'psychology';
         else if (lowerText.includes('flashdl')) microIcon = 'download';
 
+        const starHTML = link.featured
+            ? `<span class="star-badge material-symbols-outlined" title="Featured Work">star</span>`
+            : '';
+
+        const badgeHTML = link.badge
+            ? `<span class="status-badge">${link.badge}</span>`
+            : '';
+
         a.innerHTML = `
             ${link.icon}
             <span class="link-text">${link.text}</span>
+            ${badgeHTML}
+            ${starHTML}
             <span class="micro-interaction material-symbols-outlined">${microIcon}</span>
         `;
 
@@ -84,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
             linksContainer.appendChild(heading);
 
             if (category === "Utility Tools") {
-                // Collapsible "small projects" group to avoid diluting serious work
+                // Collapsible "small projects" group
                 const wrapper = document.createElement('div');
                 wrapper.className = 'utility-collapsible';
 
@@ -377,7 +388,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     case 'help': printToTerminal('Available commands: about, skills, projects, clear, exit'); break;
                     case 'about': printToTerminal('Nilay Naha - Software Developer specializing in AI/ML & Full-Stack.'); break;
                     case 'skills': printToTerminal('Java, Python, Kotlin, OpenCV, Selenium, Next.js, TensorFlow.'); break;
-                    case 'projects': printToTerminal('DrishtiLens, Face Recognition System, NetPulse v2.0, FlashDL.'); break;
+                    case 'projects': printToTerminal('DrishtiLens, Crop Yield Prediction, PyPass, ShortDesk.'); break;
                     case 'clear': termOutput.innerHTML = '<div>Type \'help\' to see a list of available commands.</div>'; break;
                     case 'exit': terminal.classList.remove('active'); break;
                     case '': break;
