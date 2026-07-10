@@ -429,3 +429,55 @@ body.dark .copy-qr-url-btn {
     scrollbar-width: thin;
     scrollbar-color: var(--border-color) transparent;
 }
+/* ── Featured Link Styling ── */
+.featured-link {
+    border-color: var(--text-main);
+    box-shadow: var(--shadow-md);
+}
+
+body.dark .featured-link {
+    border-color: var(--text-main);
+}
+
+/* ── Star Badge ── */
+.star-badge {
+    font-size: 18px;
+    color: #f5b301;
+    margin-left: 10px;
+    flex-shrink: 0;
+    font-variation-settings: 'FILL' 1;
+}
+
+/* ── Status Badge (Ongoing) ── */
+.status-badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    padding: 3px 10px;
+    margin-left: 10px;
+    border-radius: var(--radius-pill);
+    background-color: rgba(255, 193, 7, 0.15);
+    color: #b58a00;
+    border: 1px solid rgba(255, 193, 7, 0.4);
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+body.dark .status-badge {
+    background-color: rgba(255, 193, 7, 0.12);
+    color: #ffd54f;
+    border-color: rgba(255, 213, 79, 0.35);
+}
+
+/* Adjust link-btn to accommodate badges without breaking layout */
+.link-btn {
+    flex-wrap: nowrap;
+}
+
+.link-btn .link-text {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
